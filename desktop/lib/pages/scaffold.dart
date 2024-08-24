@@ -21,7 +21,7 @@ class HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    late final colorScheme = Theme.of(context).colorScheme;
+    final colorScheme = Theme.of(context).colorScheme;
     return Row(
       children: <Widget>[
         NavigationRail(

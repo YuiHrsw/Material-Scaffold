@@ -12,13 +12,14 @@ class Settings extends StatefulWidget {
 class SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Settings',
-          style: TextStyle(fontWeight: FontWeight.w500, fontSize: 26),
-        ),
-      ),
+      // appBar: AppBar(
+      //   title: const Text(
+      //     'Settings',
+      //     style: TextStyle(fontWeight: FontWeight.w500, fontSize: 26),
+      //   ),
+      // ),
       body: ListView(
         children: [
           Container(
@@ -26,9 +27,9 @@ class SettingsState extends State<Settings> {
             child: Text(
               'Theme',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 22,
                 fontWeight: FontWeight.w500,
-                color: Theme.of(context).colorScheme.primary,
+                color: colorScheme.secondary,
               ),
             ),
           ),
@@ -152,9 +153,9 @@ class SettingsState extends State<Settings> {
             child: Text(
               'Storage',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 22,
                 fontWeight: FontWeight.w500,
-                color: Theme.of(context).colorScheme.primary,
+                color: colorScheme.secondary,
               ),
             ),
           ),
@@ -171,15 +172,15 @@ class SettingsState extends State<Settings> {
             child: Text(
               'About',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 22,
                 fontWeight: FontWeight.w500,
-                color: Theme.of(context).colorScheme.primary,
+                color: colorScheme.secondary,
               ),
             ),
           ),
           ListTile(
             leading: const Icon(
-              Icons.auto_awesome_outlined,
+              Icons.open_in_new_rounded,
             ),
             title: const Text('Material Scaffold'),
             trailing: const Text(
@@ -190,6 +191,21 @@ class SettingsState extends State<Settings> {
             ),
             onTap: () {
               launchUrl(Uri.https('github.com', '/YuiHrsw/Material-Scaffold'));
+            },
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.open_in_new_rounded,
+            ),
+            title: const Text('Flutter'),
+            trailing: const Text(
+              'v 3.24.1',
+              style: TextStyle(
+                fontSize: 16,
+              ),
+            ),
+            onTap: () {
+              launchUrl(Uri.https('flutter.dev'));
             },
           )
         ],
